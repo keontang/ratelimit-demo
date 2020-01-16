@@ -14,6 +14,11 @@ static_resources:
                   - entries:
                       - key: client_id
                         value: foo
+                  - entries:
+                      - key: role_id
+                        value: super
+                      - key: user_id
+                        value: jackey
                 rate_limit_service:
                   grpc_service:
                     envoy_grpc: { cluster_name: ratelimit }

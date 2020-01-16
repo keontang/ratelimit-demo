@@ -12,14 +12,35 @@ descriptors:
       unit: minute
       requests_per_unit: 3
 
+  - key: role_id
+    value: super
+    descriptors:
+      - key: user_id
+        value: jackey
+        rate_limit:
+          unit: minute
+          requests_per_unit: 3
+
   - key: destination_cluster
     value: hello
-    rate_limit:
-      unit: minute
-      requests_per_unit: 3
+    descriptors:
+      - key: generic_key
+        value: bar
+        rate_limit:
+          unit: minute
+          requests_per_unit: 3
 
   - key: generic_key
     value: bar
     rate_limit:
       unit: minute
       requests_per_unit: 3
+
+  - key: generic_key
+    value: wine
+    descriptors:
+      - key: generic_key
+        value: bar
+        rate_limit:
+          unit: minute
+          requests_per_unit: 3

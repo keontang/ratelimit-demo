@@ -31,6 +31,12 @@ static_resources:
                               - actions:
                                   - request_headers: { header_name: content-type, descriptor_key: content-type }
                               - actions:
+                                  - generic_key: { descriptor_value: wine }
+                                  - generic_key: { descriptor_value: bar }
+                              - actions:
+                                  - generic_key: { descriptor_value: bar }
+                              - actions:
+                                  - destination_cluster: {}
                                   - generic_key: { descriptor_value: bar }
                 http_filters:
                   - name: envoy.rate_limit
