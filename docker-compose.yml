@@ -8,7 +8,7 @@ services:
       - "80"
       - "8001"
     ports:
-      - "8080:80"
+      - "80:80"
       - "8001:8001"
     volumes:
       - ./$ENVOY_CONFIG_FILE:/etc/envoy/envoy.yaml
@@ -24,10 +24,10 @@ services:
           - redis
 
   ratelimit:
-    image: lyft/ratelimit
-    build:
-      dockerfile: ratelimit.dockerfile
-      context: .
+    image: keontang/ratelimit
+#    build:
+#      dockerfile: ratelimit.dockerfile
+#      context: .
     depends_on:
       - redis
     command: /usr/local/bin/ratelimit
