@@ -37,9 +37,9 @@ static_resources:
                     config:
                       domain: envoy
                       failure_mode_deny: true
-#                      rate_limit_service:
-#                        grpc_service:
-#                          envoy_grpc: { cluster_name: ratelimit }
+                      rate_limit_service:
+                        grpc_service:
+                          envoy_grpc: { cluster_name: ratelimit }
                   - name: envoy.router
                     config: {}
   clusters:
@@ -58,9 +58,9 @@ static_resources:
       hosts:
         - socket_address: { address: hello, port_value: 8080 }
 
-rate_limit_service:
-  grpc_service:
-    envoy_grpc: { cluster_name: ratelimit }
+# rate_limit_service:
+#  grpc_service:
+#    envoy_grpc: { cluster_name: ratelimit }
 
 admin:
   access_log_path: "/dev/null"
